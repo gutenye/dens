@@ -7,7 +7,6 @@
     root["dens"] = lib.dens
   }
 })(this, function() {
-"use strict";
 class Den { //{{{1
   constructor(selector) {
     if (typeof selector === "string") {
@@ -42,7 +41,7 @@ class Den { //{{{1
         return this.node
       newNode = document.createElement(newTag)
       newNode.innerHTML = this.node.innerHTML
-      for (let attr of this.node.attributes) {
+      for (var attr of this.node.attributes) {
         newNode.setAttribute(attr.name, attr.value)
       }
     }
@@ -298,7 +297,7 @@ den.innerHTML= function(fragment) {
 den.createDocumentFragment = function(arg) {
   var ret = document.createDocumentFragment()
   if (Array.isArray(arg)) {
-    for (let v of arg) {
+    for (var v of arg) {
       ret.appendChild(v)
     }
   } else if (typeof arg === "string") {
