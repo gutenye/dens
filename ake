@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+main() {
+  build
+}
+
+build() {
+  echo ">> Building ..."
+  babel --presets es2015 den.js > dist/den.js
+}
+
+case "$1" in
+  "" ) main ;;
+  b | build ) build ;;
+esac
