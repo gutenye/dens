@@ -7,7 +7,7 @@
     root["dens"] = lib.dens
   }
 })(this, function() {
-
+"use strict";
 class Den { //{{{1
   constructor(selector) {
     if (typeof selector === "string") {
