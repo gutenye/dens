@@ -1,12 +1,3 @@
-(function (root, factory) {
-  if (typeof exports === "object" && typeof module === "object")
-    module.exports = factory()
-  else {
-    var lib = factory()
-    root["den"] = lib.den
-    root["dens"] = lib.dens
-  }
-})(this, function() {
 class Den { //{{{1
   constructor(selector) {
     if (typeof selector === "string") {
@@ -168,8 +159,8 @@ class Den { //{{{1
     den(other).remove()
   }
 }
-
-const den = function(selector) {
+//}}}1
+const den = function(selector) { //{{{1
   return new Den(selector)
 }
 
@@ -477,9 +468,8 @@ class Dens { //{{{1
     return range
   }
 }
-
-const dens = new Dens()
 //}}}1
+const dens = new Dens()
 
 if (window.$ === undefined && window.$$ === undefined) {
   window.$ = function(selector) { return typeof selector === "string" ? document.querySelector(selector) : selector || null }
@@ -491,10 +481,7 @@ NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator]
 NamedNodeMap.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator]
 HTMLCollection.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator]
 
-return {
-  den: den,
-  dens: dens,
-}
-})
+exports.den = den
+exports.dens = dens
 
 // vim: fdm=marker commentstring=//%s

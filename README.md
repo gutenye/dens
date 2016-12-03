@@ -1,6 +1,8 @@
 dens, A DOM utility library that uses native methods and returns native HTMLElement.
 ================
 
+build into es5, for uglify does not support es6. (used in create-react-app)
+
 **Idea**: Native APIs are first-class citizen, always return native HTMLElement.
 
 USAGE

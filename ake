@@ -6,7 +6,8 @@ main() {
 
 build() {
   echo ">> Building ..."
-  babel --presets es2015 den.js > dist/den.js
+  #NODE_ENV=production webpack
+  babel --presets es2015 src/dens.js > build/dens.js
 }
 
 case "$1" in
