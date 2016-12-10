@@ -7,7 +7,7 @@ main() {
 build() {
   echo ">> Building ..."
   #NODE_ENV=production webpack
-  babel --presets es2015 src/dens.js > build/dens.js
+  babel --presets es2015 src -d build
 }
 
 case "$1" in
